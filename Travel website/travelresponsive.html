@@ -952,24 +952,24 @@
                             </div>
 
                             <div class="w-[80%] text-[14px]">
-                                <form class="mb-[4%]" action="">
-                                    <input class="w-full rounded-lg bg-slate-200 py-[2%] px-[5%] my-[2%]" type="text" name="" id="" placeholder="Name">
+                                <form class="mb-[4%]" action="https://sheetdb.io/api/v1/4yxlwswacmo5t" method="POST" id="contact-form">
+                                    <input class="w-full rounded-lg bg-slate-200 py-[2%] px-[5%] my-[2%]" type="text" name="name" id="" placeholder="Name">
 
-                                    <input class="w-full rounded-lg bg-slate-200 py-[2%] px-[5%] my-[2%]" type="email" name="" id="" placeholder="Email ID">
+                                    <input class="w-full rounded-lg bg-slate-200 py-[2%] px-[5%] my-[2%]" type="email" name="email" id="" placeholder="Email ID">
 
-                                    <input class="w-full rounded-lg bg-slate-200 py-[2%] px-[5%] my-[2%]" type="text" name="" id="" placeholder="Subject">
+                                    <input class="w-full rounded-lg bg-slate-200 py-[2%] px-[5%] my-[2%]" type="text" name="subject" id="" placeholder="Subject">
 
-                                    <input class="w-full rounded-lg bg-slate-200 py-[2%] pb-[20%] px-[5%] my-[2%]" type="text" name="" id="" placeholder="Message">
+                                    <input class="w-full rounded-lg bg-slate-200 py-[2%] pb-[20%] px-[5%] my-[2%]" type="text" name="message" id="" placeholder="Message">
 
                                     <label class="text-gray-600" for="">
                                         <input type="checkbox"> 
                                         Subscribe to our newsletter
                                     </label>
-                                </form>
 
-                                <button class="bg-blue-800 p-[4%] w-full my-[5%] rounded-4xl text-white font-semibold lg:my-[1%]">
-                                    Send
-                                </button>
+                                    <button type="submit" class="bg-blue-800 p-[4%] w-full my-[5%] rounded-4xl text-white font-semibold lg:my-[1%]">
+                                        Send
+                                    </button>
+                                </form>
 
                             </div>
 
@@ -1149,5 +1149,23 @@
         
     </div>
 
+    <script>
+        var form = document.getElementById('contact-form');
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(document.getElementById("contact-form")),
+            }).then(
+                response => response.json()
+            ).then((html) => {
+                alert('Submitted! Thank you')
+                window.location.href = '';
+                location.reload();
+            });
+        });
+    </script>
+
 </body>
+
 </html>
