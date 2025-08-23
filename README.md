@@ -7,4 +7,4 @@ It enables users to plan, explore and book their journeys with ease, featuring f
 
 ##Live Link
 
-[Demo](https://spiffy-sunflower-f53148.netlify.app/)
+[Demo](https://bright-rugelach-f511d5.netlify.app/)
